@@ -7,38 +7,38 @@ class TaskTest {
 
     @Test
     public void testSimpleTaskMatches() {
-        Task task = new SimpleTask(1, "Позвонить домой");
+        Task task = new SimpleTask(1, "Доброе утро");
 
-        boolean actual = task.matches("Позвонить");
+        boolean actual = task.matches("Доброе");
 
         Assertions.assertTrue(actual);
     }
 
     @Test
     public void testSimpleTaskNotMatches() {
-        Task task = new SimpleTask(1, "Позвонить домой");
+        Task task = new SimpleTask(1, "Доброе утро");
 
-        boolean actual = task.matches("Написать");
+        boolean actual = task.matches("Злое");
 
         Assertions.assertFalse(actual);
     }
 
     @Test
     public void testEpicMatches() {
-        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(20, subtasks);
 
-        boolean actual = epic.matches("Хлеб");
+        boolean actual = epic.matches("Нож");
 
         Assertions.assertTrue(actual);
     }
 
     @Test
     public void testEpicNotMatches() {
-        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(20, subtasks);
 
-        boolean actual = epic.matches("Колбаса");
+        boolean actual = epic.matches("Ковшик");
 
         Assertions.assertFalse(actual);
     }
@@ -47,12 +47,12 @@ class TaskTest {
     public void testMeetingMatchesTopic() {
         Meeting meeting = new Meeting(
                 30,
-                "Выкатка 3й версии приложения",
-                "Приложение Нетобанка",
-                "Во вторник после обеда"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
-        boolean actual = meeting.matches("Выкатка");
+        boolean actual = meeting.matches("Наследование");
 
         Assertions.assertTrue(actual);
     }
@@ -61,9 +61,9 @@ class TaskTest {
     public void testMeetingMatchesProject() {
         Meeting meeting = new Meeting(
                 30,
-                "Выкатка 3й версии приложения",
-                "Приложение Нетобанка",
-                "Во вторник после обеда"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         boolean actual = meeting.matches("Приложение");
@@ -75,12 +75,12 @@ class TaskTest {
     public void testMeetingNotMatches() {
         Meeting meeting = new Meeting(
                 30,
-                "Выкатка 3й версии приложения",
-                "Приложение Нетобанка",
-                "Во вторник после обеда"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
-        boolean actual = meeting.matches("среда");
+        boolean actual = meeting.matches("воскресение");
 
         Assertions.assertFalse(actual);
     }

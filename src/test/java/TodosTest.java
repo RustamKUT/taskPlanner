@@ -7,16 +7,16 @@ class TodosTest {
 
     @Test
     public void shouldAddThreeTasksOfDifferentType() {
-        SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
+        SimpleTask simpleTask = new SimpleTask(5, "Добро пожаловать");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
                 555,
-                "Выкатка 3й версии приложения",
-                "Приложение НетоБанка",
-                "Во вторник после обеда"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -32,16 +32,16 @@ class TodosTest {
 
     @Test
     public void testWhenFewTasksFound() {
-        SimpleTask simpleTask = new SimpleTask(5, "Купить Хлеб");
+        SimpleTask simpleTask = new SimpleTask(5, "Взять Нож");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
                 555,
-                "Выкатка 3й версии приложения",
-                "Приложение НетоБанка",
-                "Во вторник после обеда"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -51,22 +51,22 @@ class TodosTest {
         todos.add(meeting);
 
         Task[] expected = { simpleTask, epic };
-        Task[] actual = todos.search("Хлеб");
+        Task[] actual = todos.search("Нож");
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
     public void testWhenZeroTasksFound() {
-        SimpleTask simpleTask = new SimpleTask(5, "Купить Хлеб");
+        SimpleTask simpleTask = new SimpleTask(5, "Взять Нож");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
                 555,
-                "Выкатка 3й версии приложения",
-                "Приложение НетоБанка",
-                "Во вторник после обеда"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -76,22 +76,22 @@ class TodosTest {
         todos.add(meeting);
 
         Task[] expected = { };
-        Task[] actual = todos.search("Позвонить");
+        Task[] actual = todos.search("Искать");
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
     public void testWhenOneTasksFound() {
-        SimpleTask simpleTask = new SimpleTask(5, "Купить Хлеб");
+        SimpleTask simpleTask = new SimpleTask(5, "Взять Нож");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
                 555,
-                "Выкатка 3й версии приложения",
-                "Приложение НетоБанка",
-                "Во вторник после обеда"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
