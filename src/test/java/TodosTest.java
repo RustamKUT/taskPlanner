@@ -105,4 +105,159 @@ class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldGetSubtasks() {
+
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
+        Epic epic = new Epic(55, subtasks);
+
+        String[] expected = subtasks;
+        String[] actual = epic.getSubtasks();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldGetId() {
+
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
+        Epic epic = new Epic(55, subtasks);
+        Task task = new Task(55);
+
+        int expected = epic.getId();
+        int actual = task.getId();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchInMeetingFirst() {
+        SimpleTask simpleTask = new SimpleTask(5, "Добро пожаловать");
+
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
+        Epic epic = new Epic(55, subtasks);
+
+        Meeting meeting = new Meeting(
+                555,
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
+        );
+
+        Todos todos = new Todos();
+
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
+
+        Task[] expected = {meeting};
+        Task[] actual = todos.search(meeting.getTopic());
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchInMeetingSecond() {
+        SimpleTask simpleTask = new SimpleTask(5, "Добро пожаловать");
+
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
+        Epic epic = new Epic(55, subtasks);
+
+        Meeting meeting = new Meeting(
+                555,
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
+        );
+
+        Todos todos = new Todos();
+
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
+
+        Task[] expected = {meeting};
+        Task[] actual = todos.search(meeting.getProject());
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSearchInMeetingThird() {
+        SimpleTask simpleTask = new SimpleTask(5, "Добро пожаловать");
+
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
+        Epic epic = new Epic(55, subtasks);
+
+        Meeting meeting = new Meeting(
+                555,
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
+        );
+
+        Todos todos = new Todos();
+
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
+
+        Task[] expected = {};
+        Task[] actual = todos.search(meeting.getStart());
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+   /* @Test
+    public void shouldSearchInSimpleTaskAndEpic() {
+        SimpleTask simpleTask = new SimpleTask(5, "Добро пожаловать");
+
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
+        Epic epic = new Epic(55, subtasks);
+
+        Meeting meeting = new Meeting(
+                555,
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
+        );
+
+        Todos todos = new Todos();
+
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
+
+        Task[] expected = {simpleTask, epic};
+        Task[] actual = todos.search(simpleTask.getTitle());
+
+        Assertions.assertArrayEquals(expected, actual);
+    }*/
+
+    /*@Test
+    public void shouldSearchInTodos() {
+        SimpleTask simpleTask = new SimpleTask(5, "Добро пожаловать");
+
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
+        Epic epic = new Epic(55, subtasks);
+
+        Meeting meeting = new Meeting(
+                555,
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
+        );
+
+        Todos todos = new Todos();
+
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
+
+        Task[] expected = {simpleTask, epic, meeting};
+        Task[] actual = todos.search(" ");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }*/
+
 }

@@ -27,11 +27,11 @@ public class Meeting extends Task {
     public boolean matches(String query) {
         if (topic.contains(query)) {
             return true;
-        } else if (project.contains(query)) {
+        }  if (project.contains(query)) {
             return true;
-        } else {
+        }
             return false;
         }
 
     }
-}
+

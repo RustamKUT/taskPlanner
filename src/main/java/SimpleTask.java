@@ -14,9 +14,8 @@ public class SimpleTask extends Task {
     public boolean matches(String query) {
         if (title.contains(query)) {
             return true;
-        } else {
-            return false;
         }
+            return false;
     }
 
 
