@@ -208,7 +208,7 @@ class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-   /* @Test
+    @Test
     public void shouldSearchInSimpleTaskAndEpic() {
         SimpleTask simpleTask = new SimpleTask(5, "Добро пожаловать");
 
@@ -232,9 +232,9 @@ class TodosTest {
         Task[] actual = todos.search(simpleTask.getTitle());
 
         Assertions.assertArrayEquals(expected, actual);
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void shouldSearchInTodos() {
         SimpleTask simpleTask = new SimpleTask(5, "Добро пожаловать");
 
@@ -258,6 +258,6 @@ class TodosTest {
         Task[] actual = todos.search(" ");
 
         Assertions.assertArrayEquals(expected, actual);
-    }*/
+    }
 
 }
