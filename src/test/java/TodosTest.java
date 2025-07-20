@@ -7,16 +7,16 @@ class TodosTest {
 
     @Test
     public void shouldAddThreeTasksOfDifferentType() {
-        SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
+        SimpleTask simpleTask = new SimpleTask(1, "Ложка ");
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks = {"Ложка ", "Вилка", "задач"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
                 17,
-                "Поиск ошибок в обновлении",
-                "Планировщик задач",
-                "в 9:00 утра по МСК"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение задач",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -34,7 +34,7 @@ class TodosTest {
     @Test
     public void shouldGetSubtasks() {
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks = {"Ложка ", "Вилка", "задач"};
         Epic epic = new Epic(31, subtasks);
 
         String[] expected = subtasks;
@@ -46,7 +46,7 @@ class TodosTest {
     @Test
     public void shouldGetId() {
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks = {"Ложка ", "Вилка", "задач"};
         Epic epic = new Epic(31, subtasks);
         Task task = new Task(31);
 
@@ -58,16 +58,16 @@ class TodosTest {
 
     @Test
     public void shouldSearchInTodos() {
-        SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
+        SimpleTask simpleTask = new SimpleTask(1, "Ложка ");
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks = {"Ложка ", "Вилка", "задач"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
                 17,
-                "Поиск ошибок в обновлении",
-                "Планировщик задач",
-                "в 9:00 утра по МСК"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение задач",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -84,16 +84,16 @@ class TodosTest {
 
     @Test
     public void shouldSearchInSimpleTaskAndEpic() {
-        SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
+        SimpleTask simpleTask = new SimpleTask(1, "Ложка");
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks = {"Ложка", "Вилка", "задач"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
                 17,
-                "Поиск ошибок в обновлении",
-                "Планировщик задач",
-                "в 9:00 утра по МСК"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение задач",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -112,14 +112,14 @@ class TodosTest {
     public void shouldSearchInMeetingAndEpic() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks = {"Ложка", "Вилка", "задач"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
                 17,
-                "Поиск ошибок в обновлении",
-                "Планировщик задач",
-                "в 9:00 утра по МСК"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение задач",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -138,14 +138,14 @@ class TodosTest {
     public void shouldSearchInSimpleTask() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-листы");
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
                 17,
-                "Поиск ошибок в обновлении",
-                "Планировщик задач",
-                "в 9:00 утра по МСК"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -164,14 +164,14 @@ class TodosTest {
     public void shouldSearchInEpic() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks = {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
                 17,
-                "Поиск ошибок в обновлении",
-                "Планировщик задач",
-                "в 9:00 утра по МСК"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -181,7 +181,7 @@ class TodosTest {
         todos.add(meeting);
 
         Task[] expected = {epic};
-        Task[] actual = todos.search("дефект");
+        Task[] actual = todos.search("Нож");
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -190,14 +190,14 @@ class TodosTest {
     public void shouldSearchInMeetingFirst() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks =  {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
                 17,
-                "Поиск ошибок в обновлении",
-                "Планировщик задач",
-                "в 9:00 утра по МСК"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -216,14 +216,14 @@ class TodosTest {
     public void shouldSearchInMeetingSecond() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks =  {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
                 17,
-                "Поиск ошибок в обновлении",
-                "Планировщик задач",
-                "в 9:00 утра по МСК"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
@@ -242,14 +242,14 @@ class TodosTest {
     public void shouldSearchInMeetingThird() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
+        String[] subtasks =  {"Ложка", "Вилка", "Нож"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
                 17,
-                "Поиск ошибок в обновлении",
-                "Планировщик задач",
-                "в 9:00 утра по МСК"
+                "Наследование и расширяемость систем. Проблемы наследования",
+                "Приложение Нетологии",
+                "В понедельник"
         );
 
         Todos todos = new Todos();
